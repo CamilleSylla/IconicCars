@@ -5,7 +5,6 @@ let camera;
 let renderer;
 let scene;
 let car;
-let mesh
 
 
 function init() {
@@ -49,16 +48,16 @@ function init() {
         scene.add(root);
         root.rotation.y = 0.6
         car = gltf.scene.children[0];
-        renderer.render(scene, camera);
+        animate();
     })
     
 };
 
 function animate (){
-    requestAnimationFrame(animate);
-    car.rotation.z += 0.005;
-    car.transparent = false;
     renderer.render(scene, camera);
+    car.rotation.z += 0.005
+    requestAnimationFrame(animate);
+    
 }
 
 init();
